@@ -1,0 +1,16 @@
+# GDG Web Dev Recruitment Portal
+
+A modern, fast, and feature-rich recruitment portal built with Next.js, Firebase, and Better Auth. 
+
+This repository contains the main application for onboarding, viewing departments, and managing recruitment through a comprehensive admin portal.
+
+**Live App:** [https://gdg-webdev.vercel.app/](https://gdg-webdev.vercel.app/)
+
+## Tech Stack
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- Firebase (Admin & Firestore)
+- Better Auth
+- Framer Motion & GSAP
+- Radix UI

@@ -1,0 +1,28 @@
+# GDG Web Dev Recruitment Portal (Full Documentation)
+
+This is a modern, fast, and feature-rich recruitment portal built for smooth onboarding and easy management.
+
+**Live App:** [https://gdg-webdev.vercel.app/](https://gdg-webdev.vercel.app/)
+
+## Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS, class-variance-authority, clsx, tailwind-merge
+- **Authentication**: Better Auth (with Firestore Adapter)
+- **Database**: Firebase / Firestore
+- **UI Components**: Radix UI Primitives, shadcn-inspired components
+- **Animations**: Framer Motion, GSAP, OGL
+- **Forms**: React Hook Form + Zod
+- **Rich Text**: Tiptap Editor
+- **Icons**: Lucide React, Material Symbols, React Icons
+- **Other**: React Table, React CSV, Nodemailer
+
+## Core Features & Architecture
+- **`/app/(pages)/admin`**: Centralized dashboard to control all aspects of the recruitment portal. Manage users, applications, and portal states.
+- **`/app/(pages)/join`**: Interactive onboarding and application flow.
+- **`/app/(pages)/departments`**: Detailed overviews of different departments.
+- **`/app/(pages)/development`**: Development and progress showcase.
+- **`/components`**: Reusable modular UI components.
+- **`/lib`**: Helper utilities and configuration.
+
+## LLM Integration Context
+This application exposes AI-friendly endpoints (`llms.txt` and `llms-full.txt`) in the public folder to facilitate easy parsing and understanding of the app's structure and tech stack by external agents.
