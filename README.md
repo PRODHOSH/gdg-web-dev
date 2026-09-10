@@ -6,6 +6,25 @@ Hey there! Welcome to the official **GDG Web Dev Recruitment Portal**.
 
 This is the central hub where we handle onboarding, showcase our departments, and manage everything recruitment-related. We've built this with developer experience and a snappy user interface in mind. Let's dive in!
 
+## Visual Showcase
+
+Here’s a quick peek into what the recruitment portal actually looks like. We’ve poured our hearts into making sure the experience is just as good as the tech behind it.
+
+![Hero Section](./public/readme-assets/hero.png)
+Right off the bat, the landing page hits you with a modern, dark-themed hero section. The floating informational badges, dynamic SVG squiggles, and beautiful typography set a deeply interactive and polished first impression.
+
+![About Section](./public/readme-assets/about.png)
+Scroll down a bit and you'll find the about section. We kept it clean and readable, laying out what the community is all about while continuing that sleek glassmorphism aesthetic.
+
+![Departments](./public/readme-assets/departments.png)
+The departments section is where students decide their path. We've structured this as an engaging grid, clearly separating the technical and non-technical tracks. The hover effects here really make the options pop!
+
+![Admin Dashboard](./public/readme-assets/admin.png)
+For the people running the show, the admin dashboard is the command center. This data table is fully equipped with advanced global filtering, department-specific sorting, and a snappy interface to process applicants effortlessly.
+
+![Admin Users View](./public/readme-assets/users_admin.png)
+Managing who has access is just as important. The admin users view gives a straightforward look at who holds the keys to the castle, ensuring everything stays secure.
+
 ## The Tech Stack
 
 We're riding the bleeding edge of web development. Here's what makes this app tick:

@@ -6,7 +6,16 @@ The recruitment portal has undergone a comprehensive transformation, elevating b
 
 The entire user interface was redesigned from the ground up to reflect a modern, premium aesthetic. The previous iteration relied on a generic layout and basic typography, which has now been replaced with a sophisticated dark-themed design featuring glassmorphism effects, glowing ambient backgrounds, and the distinct Bricolage Grotesque typeface. 
 
-The landing page experience was completely reimagined. The Hero section now immediately captures attention with floating informational badges, dynamic SVG elements, and staggered reveal animations powered by Framer Motion. This creates a deeply interactive and polished first impression. To support this, the navigation bar was upgraded to a sticky, backdrop-blurred header that seamlessly adapts to scroll state and user authentication status, while the footer was expanded into a rich component featuring a prominent call-to-action, structured navigation links, and animated social media integrations.
+The landing page experience was completely reimagined.
+
+![Hero Section Overhaul](./public/readme-assets/hero.png)
+As you can see, the Hero section now immediately captures attention with floating informational badges, dynamic SVG elements, and staggered reveal animations powered by Framer Motion. This creates a deeply interactive and polished first impression. To support this, the navigation bar was upgraded to a sticky, backdrop-blurred header that seamlessly adapts to scroll state and user authentication status, while the footer was expanded into a rich component featuring a prominent call-to-action, structured navigation links, and animated social media integrations.
+
+![About Section Improvements](./public/readme-assets/about.png)
+The about section was entirely restructured. We stepped away from walls of text and instead utilized clean, easily digestible blocks that explain the community's core values while maintaining the beautiful dark aesthetic.
+
+![Departments Redesign](./public/readme-assets/departments.png)
+Similarly, the departments view was upgraded to a striking grid layout. We distinctly separated the technical and non-technical tracks, ensuring that potential recruits have a clear and engaging overview of their options.
 
 We also introduced a dedicated, fully animated FAQ section. By utilizing an accordion layout with smooth expansion and collapse transitions, we managed to present vital information cleanly without overwhelming the page content. Throughout the application, unnecessary telemetry loops and artificial metric calculations that were bloating the frontend components were systematically removed, drastically improving client-side performance and rendering speed.
 
@@ -14,7 +23,11 @@ We also introduced a dedicated, fully animated FAQ section. By utilizing an acco
 
 The security and administration layers received substantial upgrades. The previous admin access relied on messy conditional rendering and artificial security delays. This was entirely replaced with a robust, passwordless authentication flow utilizing Better Auth. The new system supports both secure Email OTP and Passkey login methods, backed by a strict Firestore whitelist that ensures only authorized personnel can access sensitive data.
 
-The admin dashboard was similarly overhauled to improve data digestion. The chaotic presentation of applicant data was replaced with a highly structured Data Table. This new dashboard features advanced global filtering, department-specific sorting, pagination, and a streamlined CSV export functionality, giving administrators a powerful, organized tool to manage the recruitment pipeline.
+![Admin Dashboard Enhancement](./public/readme-assets/admin.png)
+The admin dashboard was similarly overhauled to improve data digestion. As shown above, the chaotic presentation of applicant data was replaced with a highly structured Data Table. This new dashboard features advanced global filtering, department-specific sorting, pagination, and a streamlined CSV export functionality, giving administrators a powerful, organized tool to manage the recruitment pipeline.
+
+![Admin Users Security](./public/readme-assets/users_admin.png)
+We also introduced a dedicated view for managing the whitelisted admin users, directly integrating with our newly bolstered security system to ensure that access control is both transparent and easily maintainable.
 
 ### Backend Integrity and Response Storage Fixes
 
