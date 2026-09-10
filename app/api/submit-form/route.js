@@ -46,16 +46,14 @@ export async function POST(req) {
 
     const collection = db.collection("formData");
 
-    // Fix: Limit submissions strictly by RegistrationNumber (max 2 applications per student)
-    const existingSubmissions = await collection
-      .where("RegistrationNumber", "==", formFields.RegistrationNumber)
-      .get();
+    // Check existing submissions by both Email and RegistrationNumber
+    const existingSubmissionsEmail = await collection.where("Email", "==", userEmail).get();
+    const existingSubmissionsReg = await collection.where("RegistrationNumber", "==", formFields.RegistrationNumber).get();
 
-    const alreadySubmittedDept = existingSubmissions.docs.some(
-      (doc) => doc.data()?.Department === Department
-    );
+    const alreadySubmittedDeptEmail = existingSubmissionsEmail.docs.some((doc) => doc.data()?.Department === Department);
+    const alreadySubmittedDeptReg = existingSubmissionsReg.docs.some((doc) => doc.data()?.Department === Department);
 
-    if (alreadySubmittedDept) {
+    if (alreadySubmittedDeptEmail || alreadySubmittedDeptReg) {
       return new Response(
         JSON.stringify({
           message: `You have already submitted an application for ${Department}`,
@@ -64,7 +62,12 @@ export async function POST(req) {
       );
     }
 
-    if (existingSubmissions.size >= 2) {
+    const totalApplications = new Set([
+      ...existingSubmissionsEmail.docs.map(d => d.data().Department),
+      ...existingSubmissionsReg.docs.map(d => d.data().Department)
+    ]);
+
+    if (totalApplications.size >= 2) {
       return new Response(
         JSON.stringify({
           message: "You have reached the maximum limit of 2 unique department applications.",
@@ -73,7 +76,11 @@ export async function POST(req) {
       );
     }
 
-    await collection.add({
+    // Fix: Use deterministic document ID to prevent duplicates via race conditions and improve identification
+    const safeDept = Department.replace(/[^a-zA-Z0-9]/g, '_');
+    const docId = `${userEmail}_${safeDept}`;
+
+    await collection.doc(docId).set({
       ...formFields,
       Department,
       Questions,
